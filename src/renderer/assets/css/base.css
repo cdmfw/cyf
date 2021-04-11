@@ -1,0 +1,29 @@
+@font-face {
+  font-family: STHeiti-Light;
+  src: url('../fonts/STHeiti-Light.ttc') format('truetype');
+}
+
+* {
+  font-family: STHeiti-Light, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}

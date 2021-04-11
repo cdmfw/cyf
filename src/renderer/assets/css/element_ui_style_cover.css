@@ -1,0 +1,117 @@
+/*  用于覆盖Element UI组件的基本样式  */
+
+
+/*NavMenu Style*/
+.el-menu {
+  border: none;
+}
+
+.el-submenu .el-submenu__title {
+  height: 40px;
+  color: #37474f;
+  line-height: 40px;
+  font-size: 12px;
+  font-weight: bold;
+
+  background-color: #fafafa;
+}
+
+.el-submenu.is-disabled {
+  background-color: #fafafa;
+}
+
+.el-submenu .el-menu-item {
+  height: 35px;
+  line-height: 35px;
+  font-size: 11px;
+}
+
+.el-submenu .el-menu-item[style] {
+  padding: 0 10px !important;
+  text-indent: 10px;
+}
+
+.el-submenu .el-menu-item.is-disabled,
+.el-submenu.is-disabled .el-submenu__title {
+  cursor: default;
+}
+
+
+/*Tabs Style*/
+
+.el-tabs .el-tabs__item {
+  font-size: 12px;
+}
+
+.el-tabs .el-tabs__nav-scroll,
+.el-tabs.align-left .el-tabs__nav-scroll{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.el-tabs .el-tabs__nav-scroll {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.el-tabs.align-left .el-tabs__nav-scroll {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: left;
+}
+
+.el-tabs.align-left .el-tabs__nav-wrap  {
+  padding-left: 40px ;
+}
+
+
+.el-tabs.small .el-tabs__item {
+  padding: 0 10px;
+  font-size: 10px;
+  height: 35px;
+}
+
+.el-tabs.small .el-tabs__nav-wrap  {
+  padding-left: 20px ;
+}
+
+.el-tabs.small .el-tabs__nav-wrap::after {
+  height: 1px;
+}
+
+  /* Card Style */
+
+.el-card {
+  border: none;
+}
+
+
+/* Slider */
+
+.el-slider .el-slider__bar, .el-slider .el-slider__runway {
+  height: 4px;
+}
+
+.el-slider .el-slider__runway {
+  background-clip: content-box;
+  padding: 4px 0;
+}
+
+.el-slider .el-slider__button {
+  height: 5px;
+  width: 5px;
+}
+
+.el-slider .el-slider__button-wrapper {
+  outline: none;
+  transform: translate(-15px, 3px);
+}
+
+.el-slider .el-slider__runway {
+  margin: 8px 0;
+}

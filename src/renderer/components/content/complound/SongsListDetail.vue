@@ -1,0 +1,83 @@
+<template>
+  <div v-if="$Check(detail)" class="song-list-detail container">
+    <blur-background :enable="!small" height="200px" :bg="this.detail['coverImgUrl']">
+
+      <!--歌单详情-->
+      <songs-info-show
+        :small="small"
+        :detail="detail"
+        v-loading="loading_one"
+      />
+
+      <el-tabs class="tabs align-left" v-model="selected">
+        <el-tab-pane label="歌曲列表" name="song-tracks" :lazy="true">
+
+<!--          歌曲列表-->
+          <better-song-track
+            playType="songs"
+            :id="id"
+          />
+
+        </el-tab-pane>
+      </el-tabs>
+
+    </blur-background>
+  </div>
+</template>
+
+<script>
+  import { song_list_detail } from "@/network/request_show";
+
+  import SongsInfoShow from "@/components/pages/topinfo/SongsInfoShow";
+  import BetterSongTrack from "@/components/content/complound/BetterSongTrack";
+  import BlurBackground from "@/components/common/BlurBackground";
+
+  export default {
+    name: "SongsListDetail",
+    props: {
+      id: { type: [Number, String] },
+      small: { type: Boolean,  default: false }
+    },
+    components: {
+      BlurBackground,
+      BetterSongTrack,
+      SongsInfoShow
+    },
+
+    data() {
+      return {
+        detail: null,
+        selected: 'song-tracks',
+        loading_one: true,
+      }
+    },
+
+    created() {
+      this.loadData()
+    },
+
+    methods: {
+
+      loadData() {
+        this.loading_one = true
+        song_list_detail(this.id).then(result => {
+          this.detail = result['playlist']
+          this.loading_one = false
+        })
+      },
+    },
+
+    watch: {
+      id (to, from) {
+        this.loadData()
+      }
+    },
+  }
+</script>
+
+<style scoped>
+  .song-list-detail.container {
+    min-width: 600px;
+    padding: 10px 20px 10px 20px;
+  }
+</style>

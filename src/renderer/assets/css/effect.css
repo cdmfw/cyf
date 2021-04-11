@@ -1,0 +1,27 @@
+.effect-transition {
+  transition-property: all;
+  transition-duration: 0.4s;
+}
+
+.effect-hover-float:focus {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}
+
+
+.effect-hover-float:hover {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.eff-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}
+
+.light-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.light-scroll::-webkit-scrollbar-thumb {
+  width: 3px;
+  border-radius: 2px;
+  background-color: #e0e0e0;
+}
